@@ -65,10 +65,10 @@ class ViewController: UIViewController {
     @objc func resetGame() {
         score = 0
         scoreLabel.text = "Score: \(score)"
-        
-        computersChoice = ""
-        usersChoice = ""
-
+                
+        if usersChoice == "" {
+            showAlert()
+        }
         play(usersChoice, GameElement(rawValue: computersChoice ) ?? .scissors)
     }
     
@@ -85,23 +85,21 @@ class ViewController: UIViewController {
         if usersChoice == "" {
             showAlert()
         } else {
-            //MARK: - navigate to the other screen
-                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "toResultVC") as? ResultViewController {
-                    vc.computer = computerElement.gameElement
-                    vc.user = self.usersChoice
-                    vc.result = result
-                    vc.score = self.score
-                    
-                    activityIndicator.startAnimating()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
+        
+        //MARK: - navigate to the other screen
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "toResultVC") as? ResultViewController {
+                vc.computer = computerElement.gameElement
+                vc.user = self.usersChoice
+                vc.result = result
+                vc.score = self.score
+                
+                activityIndicator.startAnimating()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.activityIndicator.stopAnimating()
                 }
-                
             }
         }
-        
-       
     }
     
     
