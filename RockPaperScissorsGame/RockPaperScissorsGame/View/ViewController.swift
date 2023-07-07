@@ -65,11 +65,14 @@ class ViewController: UIViewController {
     @objc func resetGame() {
         score = 0
         scoreLabel.text = "Score: \(score)"
+        usersChoice = ""
                 
-        if usersChoice == "" {
-            showAlert()
+        guard let computerElement = GameElement.allCases.randomElement() else {
+            print("Something went wrong!")
+            return
         }
-        play(usersChoice, GameElement(rawValue: computersChoice ) ?? .scissors)
+        
+        play(usersChoice, computerElement)
     }
     
     @IBAction func playButtonAct(_ sender: UIButton) {
@@ -85,7 +88,6 @@ class ViewController: UIViewController {
         if usersChoice == "" {
             showAlert()
         } else {
-        
         //MARK: - navigate to the other screen
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "toResultVC") as? ResultViewController {
                 vc.computer = computerElement.gameElement

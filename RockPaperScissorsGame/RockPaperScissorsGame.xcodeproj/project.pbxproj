@@ -43,13 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3347680E2A58145200999E68 /* Enumerations */ = {
+		3347680E2A58145200999E68 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				3347680C2A5813DA00999E68 /* GameElement.swift */,
 				3347680F2A58147100999E68 /* GameState.swift */,
 			);
-			path = Enumerations;
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		335677042A58D14B00C49642 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				339D9A6E2A575B300057D1EB /* ViewController.swift */,
+				334768112A5822A600999E68 /* ResultViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		339D9A5E2A575B300057D1EB = {
@@ -73,9 +82,8 @@
 			children = (
 				339D9A6A2A575B300057D1EB /* AppDelegate.swift */,
 				339D9A6C2A575B300057D1EB /* SceneDelegate.swift */,
-				339D9A6E2A575B300057D1EB /* ViewController.swift */,
-				334768112A5822A600999E68 /* ResultViewController.swift */,
-				3347680E2A58145200999E68 /* Enumerations */,
+				335677042A58D14B00C49642 /* View */,
+				3347680E2A58145200999E68 /* Enums */,
 				339D9A702A575B300057D1EB /* Main.storyboard */,
 				339D9A732A575B320057D1EB /* Assets.xcassets */,
 				339D9A752A575B320057D1EB /* LaunchScreen.storyboard */,
