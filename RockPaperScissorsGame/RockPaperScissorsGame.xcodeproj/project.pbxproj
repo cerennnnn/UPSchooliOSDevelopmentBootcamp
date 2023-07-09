@@ -52,13 +52,13 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		335677042A58D14B00C49642 /* View */ = {
+		335677042A58D14B00C49642 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				339D9A6E2A575B300057D1EB /* ViewController.swift */,
 				334768112A5822A600999E68 /* ResultViewController.swift */,
 			);
-			path = View;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		339D9A5E2A575B300057D1EB = {
@@ -82,7 +82,7 @@
 			children = (
 				339D9A6A2A575B300057D1EB /* AppDelegate.swift */,
 				339D9A6C2A575B300057D1EB /* SceneDelegate.swift */,
-				335677042A58D14B00C49642 /* View */,
+				335677042A58D14B00C49642 /* Controller */,
 				3347680E2A58145200999E68 /* Enums */,
 				339D9A702A575B300057D1EB /* Main.storyboard */,
 				339D9A732A575B320057D1EB /* Assets.xcassets */,
