@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimalView" customModule="AnimalsInfoApp">
+            <connections>
+                <outlet property="animalsImage" destination="dNM-PP-ghJ" id="jlx-Rh-7iy"/>
+                <outlet property="animalsNameLabel" destination="BTe-sx-vn2" id="5An-fI-69D"/>
+                <outlet property="goToLinkButton" destination="h9s-fQ-B13" id="cVW-hb-Bg9"/>
+                <outlet property="watchVideoButton" destination="EGe-ve-Qbz" id="pVO-zd-gf5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="225"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dNM-PP-ghJ">
+                    <rect key="frame" x="0.0" y="0.0" width="175" height="225"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTe-sx-vn2">
+                    <rect key="frame" x="64" y="10" width="47" height="30"/>
+                    <color key="backgroundColor" systemColor="separatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="KZ2-sR-1RH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gQO-mF-F6X">
+                    <rect key="frame" x="32.666666666666657" y="130" width="110" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-ve-Qbz">
+                            <rect key="frame" x="0.0" y="0.0" width="110" height="35"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Watch video">
+                                <fontDescription key="titleFontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="watchVideoButtonTapped:" destination="-1" eventType="touchUpInside" id="euh-DH-PLZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9s-fQ-B13">
+                            <rect key="frame" x="0.0" y="45" width="110" height="35"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Go to link">
+                                <fontDescription key="titleFontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="goToLinkButtonTapped:" destination="-1" eventType="touchUpInside" id="qGS-sL-J6x"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="4XH-k1-ugP"/>
+                        <constraint firstAttribute="width" constant="110" id="zun-8L-gem"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemGreenColor"/>
+            <constraints>
+                <constraint firstItem="BTe-sx-vn2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6Eu-NE-xRf"/>
+                <constraint firstItem="gQO-mF-F6X" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8PZ-Pg-mc4"/>
+                <constraint firstAttribute="bottom" secondItem="gQO-mF-F6X" secondAttribute="bottom" constant="15" id="P16-hd-aw8"/>
+                <constraint firstAttribute="bottom" secondItem="dNM-PP-ghJ" secondAttribute="bottom" id="X1z-aZ-Zfo"/>
+                <constraint firstItem="dNM-PP-ghJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ex7-dg-XDj"/>
+                <constraint firstItem="dNM-PP-ghJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="la9-lj-Wjl"/>
+                <constraint firstItem="BTe-sx-vn2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="qpU-ca-fuN"/>
+                <constraint firstItem="dNM-PP-ghJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tzY-Cp-Up2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="91" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
