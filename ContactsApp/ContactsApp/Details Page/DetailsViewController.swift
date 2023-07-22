@@ -76,6 +76,5 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.layer.cornerRadius = 15
         
         return cell
-     
     }
 }

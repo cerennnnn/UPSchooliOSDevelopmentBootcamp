@@ -45,7 +45,7 @@ class PickerViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    func generateActivityIndicator() {
+    private func generateActivityIndicator() {
         activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.center = view.center
         activityIndicator.color = .gray

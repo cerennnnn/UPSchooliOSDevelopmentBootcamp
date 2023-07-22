@@ -44,7 +44,6 @@ class ContactsTableViewController: UITableViewController {
         if let selectedContactType {
             if selectedContactType == .allContacts {
                 return Relations.allCases
-                
             }
             return [selectedContactType]
         }
@@ -111,6 +110,7 @@ class ContactsTableViewController: UITableViewController {
         
         let filteredContacts = filterContacts(indexPath.section)[indexPath.row]
         let storyboard = UIStoryboard(name: String(describing: DetailsViewController.self), bundle: nil)
+        
         selectedName = filteredContacts.contactName
         personContactsArr = getPersonContact(filterContacts(indexPath.section))
         
