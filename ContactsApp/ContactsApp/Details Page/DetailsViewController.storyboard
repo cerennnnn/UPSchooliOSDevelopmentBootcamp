@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Details-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" title="Details" id="Y6W-OH-hqX" customClass="DetailsViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woman-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="UDb-iu-jRI">
+                                <rect key="frame" x="16.666666666666657" y="59" width="360" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="KMF-lM-Dj0"/>
+                                    <constraint firstAttribute="height" constant="350" id="leg-RP-Mpr"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8av-oA-V6H">
+                                <rect key="frame" x="50" y="424" width="293" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monica Geller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDL-fc-7E6">
+                                        <rect key="frame" x="88.666666666666657" y="0.0" width="115.66666666666666" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgs-Q9-huV">
+                                        <rect key="frame" x="124.66666666666666" y="34" width="44" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uvx-t1-sxG">
+                                <rect key="frame" x="0.0" y="532" width="393" height="236"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="clb-I8-zZ6">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="DetailsViewControllerCell" id="1pE-UC-HWe" customClass="DetailsViewControllerCell" customModule="ContactsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="54" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hzn-dA-1YH">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="uvx-t1-sxG" secondAttribute="bottom" constant="50" id="0ot-pX-wg0"/>
+                            <constraint firstItem="uvx-t1-sxG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Asr-Yj-NbV"/>
+                            <constraint firstItem="UDb-iu-jRI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="d5f-k0-UBc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8av-oA-V6H" secondAttribute="trailing" constant="50" id="gJg-Va-ROe"/>
+                            <constraint firstItem="uvx-t1-sxG" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jDI-f9-sQs"/>
+                            <constraint firstItem="UDb-iu-jRI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="llg-DG-2aW"/>
+                            <constraint firstItem="uvx-t1-sxG" firstAttribute="top" secondItem="8av-oA-V6H" secondAttribute="bottom" constant="50" id="lwq-Ww-CG8"/>
+                            <constraint firstItem="8av-oA-V6H" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="t9h-Ng-6IB"/>
+                            <constraint firstItem="8av-oA-V6H" firstAttribute="top" secondItem="UDb-iu-jRI" secondAttribute="bottom" constant="15" id="ubA-oS-45V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="uvx-t1-sxG" id="1C6-TK-P0Q"/>
+                        <outlet property="contactNameLabel" destination="fDL-fc-7E6" id="cKj-8l-E3O"/>
+                        <outlet property="contactRelataionLabel" destination="Vgs-Q9-huV" id="ejQ-im-cht"/>
+                        <outlet property="imageView" destination="UDb-iu-jRI" id="Ful-78-KM3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14.503816793893129" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="woman-avatar" width="1280" height="1280"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

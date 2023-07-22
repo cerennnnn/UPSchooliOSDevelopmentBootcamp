@@ -83,6 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				33A4F74B2A63431B0057ED3B /* AnimalsInfoApp */,
+				33A4F74C2A63431B0057ED3B /* AppDelegate.swift */,
+				33A4F74E2A63431B0057ED3B /* SceneDelegate.swift */,
+				33A4F7552A63431C0057ED3B /* Assets.xcassets */,
+				33A4F7572A63431C0057ED3B /* LaunchScreen.storyboard */,
+				33A4F75A2A63431C0057ED3B /* Info.plist */,
 				33A4F74A2A63431B0057ED3B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,11 +108,6 @@
 				33A4F76A2A6356B00057ED3B /* Videos */,
 				33A4F7602A6344180057ED3B /* Main Page */,
 				33A4F78F2A63583B0057ED3B /* Web Page */,
-				33A4F74C2A63431B0057ED3B /* AppDelegate.swift */,
-				33A4F74E2A63431B0057ED3B /* SceneDelegate.swift */,
-				33A4F7552A63431C0057ED3B /* Assets.xcassets */,
-				33A4F7572A63431C0057ED3B /* LaunchScreen.storyboard */,
-				33A4F75A2A63431C0057ED3B /* Info.plist */,
 			);
 			path = AnimalsInfoApp;
 			sourceTree = "<group>";

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picker View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PickerViewController" id="Y6W-OH-hqX" customClass="PickerViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAP-zO-NGH">
+                                <rect key="frame" x="0.0" y="690" width="393" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="hZe-NW-Nl7"/>
+                                </constraints>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-y1-5yh">
+                                <rect key="frame" x="0.0" y="639.66666666666663" width="393" height="50.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhI-3L-YAM">
+                                        <rect key="frame" x="8" y="8" width="76.666666666666671" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vAx-jt-OyF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOu-9o-put">
+                                        <rect key="frame" x="320.66666666666669" y="8" width="64.333333333333314" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JYP-q4-ybP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGf-Gz-pVj">
+                                        <rect key="frame" x="176" y="14.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="FhI-3L-YAM" firstAttribute="top" secondItem="F7i-y1-5yh" secondAttribute="top" constant="8" id="5DC-jM-RcD"/>
+                                    <constraint firstAttribute="trailing" secondItem="KOu-9o-put" secondAttribute="trailing" constant="8" id="5Fc-ep-HuM"/>
+                                    <constraint firstAttribute="bottom" secondItem="KOu-9o-put" secondAttribute="bottom" constant="8" id="DgA-8n-1xY"/>
+                                    <constraint firstItem="FhI-3L-YAM" firstAttribute="leading" secondItem="F7i-y1-5yh" secondAttribute="leading" constant="8" id="GpB-bf-QTn"/>
+                                    <constraint firstItem="BGf-Gz-pVj" firstAttribute="centerY" secondItem="F7i-y1-5yh" secondAttribute="centerY" id="RtW-yE-CiG"/>
+                                    <constraint firstAttribute="bottom" secondItem="FhI-3L-YAM" secondAttribute="bottom" constant="8" id="lvx-f5-ka2"/>
+                                    <constraint firstItem="KOu-9o-put" firstAttribute="top" secondItem="F7i-y1-5yh" secondAttribute="top" constant="8" id="rY8-ET-r3a"/>
+                                    <constraint firstItem="BGf-Gz-pVj" firstAttribute="centerX" secondItem="F7i-y1-5yh" secondAttribute="centerX" id="yn5-d2-twf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uAP-zO-NGH" secondAttribute="bottom" id="7Ph-8d-hlc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="F7i-y1-5yh" secondAttribute="trailing" id="Bmi-zB-iAy"/>
+                            <constraint firstItem="uAP-zO-NGH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="R9m-BG-Qx3"/>
+                            <constraint firstItem="uAP-zO-NGH" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="eJ0-QC-dLe"/>
+                            <constraint firstItem="uAP-zO-NGH" firstAttribute="top" secondItem="F7i-y1-5yh" secondAttribute="bottom" id="hWj-K3-0oP"/>
+                            <constraint firstItem="F7i-y1-5yh" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="qxx-bR-O5z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactTypeLabel" destination="BGf-Gz-pVj" id="3ej-Id-rDC"/>
+                        <outlet property="pickerView" destination="uAP-zO-NGH" id="gX6-k5-1jh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="-30"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
