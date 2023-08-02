@@ -76,9 +76,7 @@
 		3339F1AB2A783D64005B3019 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3339F1B12A784017005B3019 /* To Dos */,
-				3339F1B62A7841AA005B3019 /* Save To Do */,
-				3339F1B72A7841C9005B3019 /* Edit To Do */,
+				33D4138E2A786A300014E9E9 /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -136,6 +134,16 @@
 				3339F1BA2A7842CC005B3019 /* EditToDoViewController.storyboard */,
 			);
 			path = "Edit To Do";
+			sourceTree = "<group>";
+		};
+		33D4138E2A786A300014E9E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3339F1B12A784017005B3019 /* To Dos */,
+				3339F1B62A7841AA005B3019 /* Save To Do */,
+				3339F1B72A7841C9005B3019 /* Edit To Do */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

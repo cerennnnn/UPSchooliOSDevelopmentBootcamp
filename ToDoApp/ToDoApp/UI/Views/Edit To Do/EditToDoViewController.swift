@@ -42,12 +42,14 @@ class EditToDoViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         self.present(alert, animated: true)
     }
-    
-    private func styleTextField() {
+
+}
+
+extension EditToDoViewController: StyleTextFieldProtocol {
+    func styleTextField() {
         editToDoTextField.clipsToBounds = true
         editToDoTextField.layer.cornerRadius = 15
         editToDoTextField.layer.borderColor = UIColor.systemGray3.cgColor
         editToDoTextField.layer.borderWidth = 1
     }
 }
-

@@ -26,7 +26,6 @@ class ToDoViewController: UIViewController {
 
 extension ToDoViewController {
     
-    // add button
     @objc private func addToDoButtonTapped() {
         // navigate to save to do page
         let storyboard = UIStoryboard(name: String(describing: SaveToDoViewController.self), bundle: nil)

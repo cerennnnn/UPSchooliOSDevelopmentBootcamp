@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol StyleTextFieldProtocol {
+    func styleTextField()
+}
+
 class SaveToDoViewController: UIViewController {
     
     @IBOutlet weak var toDoTextField: UITextField!
@@ -38,12 +42,13 @@ class SaveToDoViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         self.present(alert, animated: true)
     }
-    
-    private func styleTextField() {
+}
+
+extension SaveToDoViewController: StyleTextFieldProtocol {
+    func styleTextField() {
         toDoTextField.clipsToBounds = true
         toDoTextField.layer.cornerRadius = 15
         toDoTextField.layer.borderColor = UIColor.systemGray3.cgColor
         toDoTextField.layer.borderWidth = 1
     }
 }
-
