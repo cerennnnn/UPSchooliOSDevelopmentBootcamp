@@ -18,6 +18,7 @@
 		3339F1BB2A7842CC005B3019 /* EditToDoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3339F1BA2A7842CC005B3019 /* EditToDoViewController.storyboard */; };
 		3339F1BD2A7842E7005B3019 /* SaveToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339F1BC2A7842E7005B3019 /* SaveToDoViewController.swift */; };
 		3339F1BF2A7842F0005B3019 /* SaveToDoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3339F1BE2A7842F0005B3019 /* SaveToDoViewController.storyboard */; };
+		3394D2962A7C35840022D7A9 /* ToDoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394D2952A7C35840022D7A9 /* ToDoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3339F1BA2A7842CC005B3019 /* EditToDoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditToDoViewController.storyboard; sourceTree = "<group>"; };
 		3339F1BC2A7842E7005B3019 /* SaveToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToDoViewController.swift; sourceTree = "<group>"; };
 		3339F1BE2A7842F0005B3019 /* SaveToDoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SaveToDoViewController.storyboard; sourceTree = "<group>"; };
+		3394D2952A7C35840022D7A9 /* ToDoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +138,18 @@
 			path = "Edit To Do";
 			sourceTree = "<group>";
 		};
+		3394D2942A7C34D70022D7A9 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3394D2952A7C35840022D7A9 /* ToDoCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		33D4138E2A786A300014E9E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3394D2942A7C34D70022D7A9 /* CollectionView */,
 				3339F1B12A784017005B3019 /* To Dos */,
 				3339F1B62A7841AA005B3019 /* Save To Do */,
 				3339F1B72A7841C9005B3019 /* Edit To Do */,
@@ -222,6 +233,7 @@
 				3339F1B92A7842C6005B3019 /* EditToDoViewController.swift in Sources */,
 				3339F1BD2A7842E7005B3019 /* SaveToDoViewController.swift in Sources */,
 				3339F1982A783D50005B3019 /* AppDelegate.swift in Sources */,
+				3394D2962A7C35840022D7A9 /* ToDoCollectionViewCell.swift in Sources */,
 				3339F1B02A783E22005B3019 /* ToDo.swift in Sources */,
 				3339F19A2A783D50005B3019 /* SceneDelegate.swift in Sources */,
 				3339F1B32A784033005B3019 /* ToDoViewController.swift in Sources */,
