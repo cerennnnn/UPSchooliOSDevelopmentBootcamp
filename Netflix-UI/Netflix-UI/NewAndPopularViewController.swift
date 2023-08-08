@@ -5,4 +5,12 @@
 //  Created by Ceren Güneş on 8.08.2023.
 //
 
-import Foundation
+import UIKit
+
+class NewAndPopularViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .systemIndigo
+    }
+}
