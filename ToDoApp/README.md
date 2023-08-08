@@ -11,5 +11,5 @@ Technologies I used:
 
 Example :
 
-https://github.com/cerennnnn/UPSchooliOSDevelopmentBootcamp/assets/97634053/36afe245-b0e4-4cf3-93cd-3d63adddb137
+https://github.com/cerennnnn/UPSchooliOSDevelopmentBootcamp/assets/97634053/495a1221-d05d-4ee9-aaab-fbd1dfa895cb
 
