@@ -114,6 +114,7 @@
 		3339F1B12A784017005B3019 /* To Dos */ = {
 			isa = PBXGroup;
 			children = (
+				3394D2952A7C35840022D7A9 /* ToDoCollectionViewCell.swift */,
 				3339F1B22A784033005B3019 /* ToDoViewController.swift */,
 				3339F1B42A78403E005B3019 /* ToDoViewController.storyboard */,
 			);
@@ -138,18 +139,9 @@
 			path = "Edit To Do";
 			sourceTree = "<group>";
 		};
-		3394D2942A7C34D70022D7A9 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				3394D2952A7C35840022D7A9 /* ToDoCollectionViewCell.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
 		33D4138E2A786A300014E9E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3394D2942A7C34D70022D7A9 /* CollectionView */,
 				3339F1B12A784017005B3019 /* To Dos */,
 				3339F1B62A7841AA005B3019 /* Save To Do */,
 				3339F1B72A7841C9005B3019 /* Edit To Do */,

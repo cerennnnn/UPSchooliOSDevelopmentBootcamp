@@ -34,18 +34,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50B-yO-zhr">
-                                                    <rect key="frame" x="122" y="8" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="bCp-61-9Pm"/>
-                                                        <constraint firstAttribute="height" constant="20" id="qaf-PC-zfr"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="doneButtonTapped:" destination="LmI-6X-sgj" eventType="touchUpInside" id="Vcv-4h-fQM"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-rm-QRd">
                                                     <rect key="frame" x="8" y="8" width="20" height="20"/>
                                                     <constraints>
@@ -61,26 +49,41 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGt-SX-ZIM">
-                                                    <rect key="frame" x="8" y="36" width="134" height="106"/>
+                                                    <rect key="frame" x="8" y="28" width="134" height="114"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3E-Qu-2Dh">
+                                                    <rect key="frame" x="122" y="8" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="WdX-4M-rVT"/>
+                                                        <constraint firstAttribute="width" constant="20" id="sXJ-N9-xiQ"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="doneButtonTapped:" destination="LmI-6X-sgj" eventType="touchUpInside" id="tCc-A6-8bp"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="50B-yO-zhr" secondAttribute="trailing" constant="8" id="1P6-OC-A9c"/>
-                                                <constraint firstItem="fGt-SX-ZIM" firstAttribute="top" secondItem="50B-yO-zhr" secondAttribute="bottom" constant="8" id="DWk-gY-kap"/>
+                                                <constraint firstItem="fGt-SX-ZIM" firstAttribute="top" secondItem="Xrk-rm-QRd" secondAttribute="bottom" id="3i8-tn-tYW"/>
+                                                <constraint firstItem="fGt-SX-ZIM" firstAttribute="leading" secondItem="K7d-tV-38z" secondAttribute="leading" constant="8" id="L2C-V5-ScJ"/>
                                                 <constraint firstItem="Xrk-rm-QRd" firstAttribute="leading" secondItem="K7d-tV-38z" secondAttribute="leading" constant="8" id="gCk-mN-dbA"/>
                                                 <constraint firstAttribute="bottom" secondItem="fGt-SX-ZIM" secondAttribute="bottom" constant="8" id="hDF-G9-44v"/>
                                                 <constraint firstItem="fGt-SX-ZIM" firstAttribute="leading" secondItem="K7d-tV-38z" secondAttribute="leading" constant="8" id="hRY-5I-LwS"/>
                                                 <constraint firstItem="Xrk-rm-QRd" firstAttribute="top" secondItem="K7d-tV-38z" secondAttribute="top" constant="8" id="mnb-32-Kum"/>
-                                                <constraint firstItem="50B-yO-zhr" firstAttribute="top" secondItem="K7d-tV-38z" secondAttribute="top" constant="8" id="t65-mp-rZE"/>
+                                                <constraint firstItem="I3E-Qu-2Dh" firstAttribute="top" secondItem="K7d-tV-38z" secondAttribute="top" constant="8" id="myN-P7-bzj"/>
+                                                <constraint firstAttribute="bottom" secondItem="fGt-SX-ZIM" secondAttribute="bottom" constant="8" id="rHa-An-u27"/>
+                                                <constraint firstAttribute="trailing" secondItem="fGt-SX-ZIM" secondAttribute="trailing" constant="8" id="vyt-0h-HGo"/>
+                                                <constraint firstAttribute="trailing" secondItem="I3E-Qu-2Dh" secondAttribute="trailing" constant="8" id="xk4-jW-WKs"/>
                                                 <constraint firstAttribute="trailing" secondItem="fGt-SX-ZIM" secondAttribute="trailing" constant="8" id="xmW-6C-6UA"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
-                                            <outlet property="toDoLabel" destination="fGt-SX-ZIM" id="m30-zE-LDE"/>
+                                            <outlet property="toDoLabel" destination="fGt-SX-ZIM" id="zpZ-9k-b5k"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -110,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="toDoCollectionView" destination="mjG-TC-WBU" id="fvR-WG-XDQ"/>
+                        <outlet property="toDoSeaarchBar" destination="h7G-4C-vQP" id="Ogy-CB-KYM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
