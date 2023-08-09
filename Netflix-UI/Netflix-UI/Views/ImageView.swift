@@ -10,7 +10,6 @@ import UIKit
 class ImageView: UIView {
     
     private let playButton: UIButton = {
-        
         let button = UIButton()
         button.setTitle("Play", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -25,7 +24,6 @@ class ImageView: UIView {
     }()
     
     private let listButton: UIButton = {
-
         let button = UIButton()
         button.setTitle("My List", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -39,7 +37,6 @@ class ImageView: UIView {
     }()
     
     private let headerImageView: UIImageView = {
-        
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -47,18 +44,6 @@ class ImageView: UIView {
         
         return imageView
     }()
-    
-    private func addGradient() {
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [
-            UIColor.clear.cgColor,
-            UIColor.systemBackground.cgColor
-        ]
-        
-        gradientLayer.frame = bounds
-        layer.addSublayer(gradientLayer)
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -85,7 +70,6 @@ extension ImageView {
     
     private func layout() {
         addSubview(headerImageView)
-//        addGradient()
         addSubview(playButton)
         addSubview(listButton)
         

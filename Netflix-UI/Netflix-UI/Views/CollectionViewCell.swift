@@ -18,6 +18,7 @@ class CollectionViewCell: UICollectionViewCell {
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 10
+        
         contentView.addSubview(imageView)
         
     }

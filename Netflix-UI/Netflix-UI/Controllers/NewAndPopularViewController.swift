@@ -8,10 +8,10 @@
 import UIKit
 
 class NewAndPopularViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
-        
     }
 }

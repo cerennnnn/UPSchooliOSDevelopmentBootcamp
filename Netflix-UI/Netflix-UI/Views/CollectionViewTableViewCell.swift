@@ -13,7 +13,6 @@ class CollectionViewTableViewCell: UITableViewCell {
     var cellData: [String] = []
     
     private let collectionView: UICollectionView = {
-       
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 140, height: 200)
@@ -25,7 +24,6 @@ class CollectionViewTableViewCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .systemPink
         contentView.addSubview(collectionView)
@@ -46,13 +44,11 @@ class CollectionViewTableViewCell: UITableViewCell {
 
 //MARK: - CollectionViewTableViewCell Delegate & DataSource Methods
 extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
 
         cell.imageView.image = UIImage(named: cellData[indexPath.row])

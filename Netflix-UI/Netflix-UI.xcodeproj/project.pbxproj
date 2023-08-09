@@ -72,15 +72,11 @@
 		33346CEC2A828D5F00FDDCED /* Netflix-UI */ = {
 			isa = PBXGroup;
 			children = (
-				3371E61C2A83BA2800CFC440 /* Resources */,
 				3371E6192A83B86000CFC440 /* Models */,
-				33346CED2A828D5F00FDDCED /* AppDelegate.swift */,
-				33346CEF2A828D5F00FDDCED /* SceneDelegate.swift */,
 				3371E6122A837E8400CFC440 /* Views */,
 				3371E6102A836D8F00CFC440 /* Controllers */,
-				33346CF62A828D6100FDDCED /* Assets.xcassets */,
-				33346CF82A828D6100FDDCED /* LaunchScreen.storyboard */,
-				33346CFB2A828D6100FDDCED /* Info.plist */,
+				3371E61C2A83BA2800CFC440 /* Resources */,
+				3371E6212A83ECB700CFC440 /* Files */,
 			);
 			path = "Netflix-UI";
 			sourceTree = "<group>";
@@ -121,6 +117,18 @@
 				3371E61D2A83BA3000CFC440 /* Extensions.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3371E6212A83ECB700CFC440 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				33346CED2A828D5F00FDDCED /* AppDelegate.swift */,
+				33346CEF2A828D5F00FDDCED /* SceneDelegate.swift */,
+				33346CF62A828D6100FDDCED /* Assets.xcassets */,
+				33346CF82A828D6100FDDCED /* LaunchScreen.storyboard */,
+				33346CFB2A828D6100FDDCED /* Info.plist */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,7 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Netflix-UI/Info.plist";
+				INFOPLIST_FILE = "Netflix-UI/Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -370,7 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Netflix-UI/Info.plist";
+				INFOPLIST_FILE = "Netflix-UI/Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

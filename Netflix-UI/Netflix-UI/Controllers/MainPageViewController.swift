@@ -43,11 +43,11 @@ class MainPageViewController: UIViewController {
             }
         }
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         let searchIcon = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .done, target: self, action: nil)
         let tvIcon = UIBarButtonItem(image: UIImage(systemName: "tv"), style: .done, target: self, action: nil)
         
         navigationController?.navigationBar.tintColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [searchIcon, tvIcon]
                 
     }
@@ -91,16 +91,19 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             cell.setData(data: Shows.firstSectionTvShows)
-        } else if indexPath.section == 1 {
+        case 1:
             cell.setData(data: Shows.secondSectionTvShows)
-        } else if indexPath.section == 2 {
+        case 2:
             cell.setData(data: Shows.thirdSectionTvShows)
-        } else if indexPath.section == 3 {
+        case 3:
             cell.setData(data: Shows.fourthSectionTvShows)
-        } else if indexPath.section == 4 {
+        case 4:
             cell.setData(data: Shows.fifthSectionTvShows)
+        default:
+            fatalError()
         }
         
         return cell 
