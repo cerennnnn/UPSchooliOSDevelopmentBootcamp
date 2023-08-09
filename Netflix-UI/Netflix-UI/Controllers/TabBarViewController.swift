@@ -24,8 +24,8 @@ class TabBarViewController: UITabBarController {
         var image = UIImage(named: "smiley_icon")
         
         if let originalImage = UIImage(named: "smiley_icon") {
-            let newWidth: CGFloat = 30
-            let newHeight: CGFloat = 30
+            let newWidth: CGFloat = 25
+            let newHeight: CGFloat = 25
             
             if let resizedImage = resizeImage(image: originalImage, newWidth: newWidth, newHeight: newHeight) {
                 image = resizedImage
