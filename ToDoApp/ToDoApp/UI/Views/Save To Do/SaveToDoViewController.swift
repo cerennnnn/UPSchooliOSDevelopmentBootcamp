@@ -16,6 +16,7 @@ class SaveToDoViewController: UIViewController {
     @IBOutlet weak var toDoTextField: UITextField!
     
     static let identifier = "SaveToDoViewController"
+    let viewModel = SaveToDoViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,9 @@ class SaveToDoViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         if let toDo = toDoTextField.text, toDoTextField.text != "" {
-            saveToDo(toDo: toDo)
+            viewModel.saveToDo(toDo: toDo)
             showAlert()
         }
-    }
-    
-    private func saveToDo(toDo: String) {
-        print("To do saved! -> \(toDo)")
     }
     
     private func showAlert() {

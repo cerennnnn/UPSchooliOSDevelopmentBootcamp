@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,77 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mjG-TC-WBU">
-                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F8x-FZ-Mpa">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ToDoCollectionViewCell" id="LmI-6X-sgj" customClass="ToDoCollectionViewCell" customModule="ToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K7d-tV-38z">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-rm-QRd">
-                                                    <rect key="frame" x="8" y="8" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="LKD-Ke-Cve"/>
-                                                        <constraint firstAttribute="height" constant="20" id="wy5-rw-4jj"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="x.circle" catalog="system">
-                                                        <color key="baseForegroundColor" red="0.91763085129999999" green="0.2010217309" blue="0.3490046859" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="cancelButtonTapped:" destination="LmI-6X-sgj" eventType="touchUpInside" id="qun-Bm-kqZ"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGt-SX-ZIM">
-                                                    <rect key="frame" x="8" y="28" width="134" height="114"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3E-Qu-2Dh">
-                                                    <rect key="frame" x="122" y="8" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="WdX-4M-rVT"/>
-                                                        <constraint firstAttribute="width" constant="20" id="sXJ-N9-xiQ"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="doneButtonTapped:" destination="LmI-6X-sgj" eventType="touchUpInside" id="tCc-A6-8bp"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="fGt-SX-ZIM" firstAttribute="top" secondItem="Xrk-rm-QRd" secondAttribute="bottom" id="3i8-tn-tYW"/>
-                                                <constraint firstItem="fGt-SX-ZIM" firstAttribute="leading" secondItem="K7d-tV-38z" secondAttribute="leading" constant="8" id="L2C-V5-ScJ"/>
-                                                <constraint firstItem="Xrk-rm-QRd" firstAttribute="leading" secondItem="K7d-tV-38z" secondAttribute="leading" constant="8" id="gCk-mN-dbA"/>
-                                                <constraint firstAttribute="bottom" secondItem="fGt-SX-ZIM" secondAttribute="bottom" constant="8" id="hDF-G9-44v"/>
-                                                <constraint firstItem="fGt-SX-ZIM" firstAttribute="leading" secondItem="K7d-tV-38z" secondAttribute="leading" constant="8" id="hRY-5I-LwS"/>
-                                                <constraint firstItem="Xrk-rm-QRd" firstAttribute="top" secondItem="K7d-tV-38z" secondAttribute="top" constant="8" id="mnb-32-Kum"/>
-                                                <constraint firstItem="I3E-Qu-2Dh" firstAttribute="top" secondItem="K7d-tV-38z" secondAttribute="top" constant="8" id="myN-P7-bzj"/>
-                                                <constraint firstAttribute="bottom" secondItem="fGt-SX-ZIM" secondAttribute="bottom" constant="8" id="rHa-An-u27"/>
-                                                <constraint firstAttribute="trailing" secondItem="fGt-SX-ZIM" secondAttribute="trailing" constant="8" id="vyt-0h-HGo"/>
-                                                <constraint firstAttribute="trailing" secondItem="I3E-Qu-2Dh" secondAttribute="trailing" constant="8" id="xk4-jW-WKs"/>
-                                                <constraint firstAttribute="trailing" secondItem="fGt-SX-ZIM" secondAttribute="trailing" constant="8" id="xmW-6C-6UA"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="150" height="150"/>
-                                        <connections>
-                                            <outlet property="toDoLabel" destination="fGt-SX-ZIM" id="zpZ-9k-b5k"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <searchBar contentMode="redraw" placeholder="Search To Do" translatesAutoresizingMaskIntoConstraints="NO" id="h7G-4C-vQP">
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -95,25 +23,51 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="CY2-SK-CDa"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IwJ-AJ-fL7">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ToDoViewControllerCell" id="Bij-cN-eou" customClass="ToDoTableViewCell" customModule="ToDoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bij-cN-eou" id="Jgl-Dj-6no">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2A-Ri-l1C">
+                                                    <rect key="frame" x="28" y="19" width="41" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="H2A-Ri-l1C" firstAttribute="leading" secondItem="Jgl-Dj-6no" secondAttribute="leadingMargin" constant="8" id="Qe5-Mj-acg"/>
+                                                <constraint firstItem="H2A-Ri-l1C" firstAttribute="top" secondItem="Jgl-Dj-6no" secondAttribute="topMargin" constant="8" id="unx-dk-mjG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="toDoLabel" destination="H2A-Ri-l1C" id="rLR-X1-PNg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mjG-TC-WBU" secondAttribute="trailing" id="0io-Qf-cuQ"/>
-                            <constraint firstItem="mjG-TC-WBU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="71u-FK-q3f"/>
                             <constraint firstItem="h7G-4C-vQP" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="M5g-ZB-iVA"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mjG-TC-WBU" secondAttribute="bottom" id="Oo2-Zw-Kpx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IwJ-AJ-fL7" secondAttribute="trailing" id="PgU-Bt-tjO"/>
+                            <constraint firstItem="IwJ-AJ-fL7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="R3z-XU-Eg3"/>
                             <constraint firstItem="h7G-4C-vQP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wbx-r7-XKc"/>
-                            <constraint firstItem="mjG-TC-WBU" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Z8g-mV-WpV"/>
-                            <constraint firstItem="mjG-TC-WBU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="cuK-ZW-Akv"/>
                             <constraint firstItem="h7G-4C-vQP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gNZ-NQ-O6e"/>
-                            <constraint firstItem="mjG-TC-WBU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="k2w-wn-AB4"/>
-                            <constraint firstItem="mjG-TC-WBU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tw5-2n-laF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="IwJ-AJ-fL7" secondAttribute="bottom" id="nmq-uW-p9B"/>
+                            <constraint firstItem="IwJ-AJ-fL7" firstAttribute="top" secondItem="h7G-4C-vQP" secondAttribute="bottom" id="t7n-mL-qxS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="toDoCollectionView" destination="mjG-TC-WBU" id="fvR-WG-XDQ"/>
                         <outlet property="toDoSeaarchBar" destination="h7G-4C-vQP" id="Ogy-CB-KYM"/>
+                        <outlet property="toDoTableView" destination="IwJ-AJ-fL7" id="03j-Tt-Pkp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -122,8 +76,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
-        <image name="x.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

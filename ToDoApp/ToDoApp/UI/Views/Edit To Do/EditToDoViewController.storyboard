@@ -26,36 +26,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWJ-SE-7eb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UC-hY-CIP">
                                 <rect key="frame" x="136.66666666666666" y="733" width="119.99999999999997" height="35"/>
-                                <color key="backgroundColor" red="0.9566397619" green="0.68796008799999997" blue="0.89534331339999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="39a-or-sEe"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="8H3-jQ-pDa"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="fB9-xF-2TC"/>
-                                    <constraint firstAttribute="height" constant="35" id="phf-Un-m8W"/>
+                                    <constraint firstAttribute="height" constant="35" id="dcR-NI-QPM"/>
+                                    <constraint firstAttribute="width" constant="120" id="tmJ-vC-MmS"/>
                                 </constraints>
-                                <color key="tintColor" red="0.15246458730000001" green="0.15246458730000001" blue="0.15246458730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit">
-                                    <color key="baseForegroundColor" red="0.120464663" green="0.120464663" blue="0.120464663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" title="Update"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="editButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ac9-qG-ftg"/>
+                                    <action selector="editButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pK3-Bd-M3d"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4UC-hY-CIP" secondAttribute="bottom" constant="50" id="2bU-Zp-dyE"/>
                             <constraint firstItem="909-Ir-E3a" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="3ax-MQ-yCh"/>
                             <constraint firstAttribute="trailing" secondItem="909-Ir-E3a" secondAttribute="trailing" constant="20" id="4xe-Jq-3Rq"/>
-                            <constraint firstItem="FWJ-SE-7eb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="DEF-IO-moL"/>
                             <constraint firstItem="909-Ir-E3a" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="120" id="Jcd-sD-j3q"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FWJ-SE-7eb" secondAttribute="bottom" constant="50" id="drQ-2Y-L63"/>
+                            <constraint firstItem="4UC-hY-CIP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZXB-tk-vov"/>
                         </constraints>
                     </view>
                     <connections>
@@ -70,6 +66,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

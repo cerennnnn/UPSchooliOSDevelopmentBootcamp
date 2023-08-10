@@ -13,6 +13,8 @@ class EditToDoViewController: UIViewController {
     
     static let identifier = "EditToDoViewController"
     var toDo: ToDo?
+    let viewModel = EditToDoViewModel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +30,12 @@ class EditToDoViewController: UIViewController {
         guard let toDoID = toDo?.toDoID else { return }
         
         if let editedToDo = editToDoTextField.text, editToDoTextField.text != nil {
-            updateToDo(toDoID: toDoID, toDo: editedToDo)
+            viewModel.updateToDo(toDoID: toDoID, toDo: editedToDo)
             showAlert()
         }
     }
     
-    private func updateToDo(toDoID: Int, toDo: String) {
-        print("To do updated! -> \(toDoID) - \(toDo)")
-    }
+    
     
     private func showAlert() {
         let alert = UIAlertController(title: "To do updated! ✏️", message: "", preferredStyle: .alert)

@@ -10,44 +10,42 @@ import UIKit
 class ToDoViewController: UIViewController {
     
     @IBOutlet weak var toDoSeaarchBar: UISearchBar!
-    @IBOutlet weak var toDoCollectionView: UICollectionView!
+    @IBOutlet weak var toDoTableView: UITableView!
     
-    static let identifier = "ToDoViewController"
+    static let identifier = "ToDoViewControllerCell"
     var toDoList = [ToDo]()
     var filteredToDoList = [ToDo]()
     var label = UILabel()
     var isFiltering = false
-    var isToDoDone = false 
+    let viewModel = ToDoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         toDoSeaarchBar.delegate = self
-        toDoCollectionView.delegate = self
-        toDoCollectionView.dataSource = self
+        toDoTableView.delegate = self
+        toDoTableView.dataSource = self
         
         title = "To Do App"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addToDoButtonTapped))
-        navigationController?.navigationBar.tintColor = UIColor(named: "buttonColor")
+        navigationController?.navigationBar.tintColor = UIColor.systemBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashButtonTapped))
         
-        collectionViewDesign()
-        
-        let toDo1 = ToDo(toDoID: 1, toDo: "Buy food 🥦🌽🍍")
-        let toDo2 = ToDo(toDoID: 2, toDo: "Study Swift 👩🏻‍💻")
-        let toDo3 = ToDo(toDoID: 3, toDo: "Take mock tests! 📝")
-        
-        toDoList.append(toDo1)
-        toDoList.append(toDo2)
-        toDoList.append(toDo3)
+        _ = viewModel.toDoList.subscribe(onNext: { toDos in
+            self.toDoList = toDos
+            self.toDoTableView.reloadData()
+        })
         
         style()
         layout()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadAllToDos()
+    }
 }
 
 extension ToDoViewController {
@@ -73,59 +71,31 @@ extension ToDoViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
             // delete all todos
             self.toDoList.removeAll()
-            self.toDoCollectionView.reloadData()
+            self.toDoTableView.reloadData()
             self.label.isHidden = false
         }))
         self.present(alert, animated: true)
     }
-    
-    private func collectionViewDesign() {
-        let design = UICollectionViewFlowLayout()
-        let screenWidth = UIScreen.main.bounds.width
-        let itemWidth = (screenWidth - 30) / 2
-        
-        design.scrollDirection = .vertical
-        design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        design.minimumLineSpacing = 10
-        design.minimumInteritemSpacing = 10
-        design.itemSize = CGSize(width: itemWidth, height: itemWidth)
-        
-        toDoCollectionView.collectionViewLayout = design
-    }
+ 
 }
 
-//MARK: - UICollectionView Delegate & DataSource Methods
-extension ToDoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if isFiltering {
-            return filteredToDoList.count
-        } else {
-            return toDoList.count
-        }
+
+//MARK: - UITableView Delegate & DataSource Methods
+extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return toDoList.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let toDo = toDoList[indexPath.row].toDo
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: "ToDoCollectionViewCell"), for: indexPath) as! ToDoCollectionViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ToDoViewController.identifier, for: indexPath) as! ToDoTableViewCell
+            
         cell.toDoLabel.text = toDo
-        cell.layer.cornerRadius = 10
-        cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.borderWidth = 0.5
-        
-        cell.deleteToDoProtocol = self
-        cell.toDoDoneProtocol = self
-        cell.indexPath = indexPath
-        cell.toDoList = toDoList
-        cell.isToDoDone = isToDoDone
-
-        cell.shake()
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let toDo = toDoList[indexPath.row]
         
@@ -135,53 +105,38 @@ extension ToDoViewController: UICollectionViewDelegate, UICollectionViewDataSour
             destinationVC.toDo = toDo
             navigationController?.pushViewController(destinationVC, animated: true)
         }
-    }
-}
 
-//MARK: - DeleteToDoProtocol
-extension ToDoViewController: DeleteToDoProtocol {
-    func deleteToDo(_ indexPath: IndexPath) {
-        let toDo = toDoList[indexPath.row]
-        print("\(toDo.toDo) silindi.")
-        
-        // Animasyonu başlat
-        UIView.animate(withDuration: 2.0, animations: {
-            
-        }) { (finished) in
-            // Animasyon tamamlandığında yapılacaklar
-            self.toDoList.remove(at: indexPath.row)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.toDoCollectionView.reloadData()
-                if self.toDoList.isEmpty {
-                    self.label.isHidden = false
-                }
-            }
-        }
-    }
-}
-
-//MARK: - DoneDataProtocol
-extension ToDoViewController: ToDoDoneProtocol {
-    func toDoDoneToggle(_ indexPath: IndexPath, _ isToDoDone: Bool) {
-        self.isToDoDone.toggle()
-        toDoCollectionView.reloadItems(at: [indexPath])
     }
     
-}
-
-//MARK: - shake animation extension
-extension UICollectionViewCell {
-    func shake() {
-        let shakeAnimation = CABasicAnimation(keyPath: "position")
-        shakeAnimation.duration = 0.1
-        shakeAnimation.repeatCount = 2
-        shakeAnimation.autoreverses = true
-        shakeAnimation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
-        shakeAnimation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let toDoItem = toDoList[indexPath.row]
         
-        layer.add(shakeAnimation, forKey: "shake")
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contextualAction, view, bool in
+            
+            let alert = UIAlertController(title: "Careful!", message: "Do you want to delete \(toDoItem.toDo)?", preferredStyle: .alert)
+            
+            let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            let okButton = UIAlertAction(title: "Yes", style: .destructive) { action in
+                self.viewModel.deleteToDo(toDoID: toDoItem.toDoID)
+            }
+            
+            alert.addAction(cancelButton)
+            alert.addAction(okButton)
+            self.present(alert, animated: true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
+
+//MARK: - UISearchBar Delegate Methods
+extension ToDoViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(toDo: searchText)
+    }
+}
+
 
 //MARK: - Label
 extension ToDoViewController {
@@ -210,23 +165,5 @@ extension ToDoViewController {
             label.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -20)
         ])
     }
-}
-
-//MARK: - UISearchBar Delegate Methods
-extension ToDoViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-        
-        if searchText.isEmpty {
-            isFiltering = false
-        } else {
-            isFiltering = true
-        }
-        
-        filteredToDoList = toDoList.filter { $0.toDo.contains(searchText) }
-        toDoCollectionView.reloadData()
-        
-    }
- 
 }
 
