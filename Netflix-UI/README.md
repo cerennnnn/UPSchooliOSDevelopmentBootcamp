@@ -1,6 +1,6 @@
 I made the UI of the Netflix App with using no storyboard - all by programmatically. Users can see different shows by swiping horizontally and vertically through the screen. I used:
 
-  -  UICollectionView 
+  - UICollectionView 
   - UITableView
   - Delegate pattern
   - UITabbarController
@@ -8,5 +8,7 @@ I made the UI of the Netflix App with using no storyboard - all by programmatica
 ☁️ Demo video of the app:
 
 
-https://github.com/cerennnnn/UPSchooliOSDevelopmentBootcamp/assets/97634053/b190977f-829e-45fb-aa8a-bc72c5fec929
+https://github.com/cerennnnn/UPSchooliOSDevelopmentBootcamp/assets/97634053/cb482362-6972-48de-9255-697cfb0ac4fe
+
+
 
