@@ -8,7 +8,9 @@ I made the UI of the Netflix App with using no storyboard - all by programmatica
 ☁️ Demo video of the app:
 
 
-https://github.com/cerennnnn/UPSchooliOSDevelopmentBootcamp/assets/97634053/cb482362-6972-48de-9255-697cfb0ac4fe
+
+https://github.com/cerennnnn/UPSchooliOSDevelopmentBootcamp/assets/97634053/babf2c20-de06-4147-81d5-fb280f6dba03
+
 
 
 
