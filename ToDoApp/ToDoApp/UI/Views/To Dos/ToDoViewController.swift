@@ -38,11 +38,14 @@ class ToDoViewController: UIViewController {
             self.toDoList = toDos
          
             self.toDoTableView.reloadData()
+            self.isToDoListEmpty()
         })
         
         style()
         layout()
         generateActivityIndicator()
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -133,6 +136,7 @@ extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
             
             let okButton = UIAlertAction(title: "Yes", style: .destructive) { action in
                 self.viewModel.deleteToDo(toDoID: toDoItem.toDoID)
+                self.isToDoListEmpty()
             }
             
             alert.addAction(cancelButton)
@@ -141,6 +145,10 @@ extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    private func isToDoListEmpty() {
+        label.isHidden = toDoList.count == 0 ? false : true
     }
 }
 

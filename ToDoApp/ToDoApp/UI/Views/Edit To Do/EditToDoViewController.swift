@@ -39,7 +39,9 @@ class EditToDoViewController: UIViewController {
     
     private func showAlert() {
         let alert = UIAlertController(title: "To do updated! ✏️", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
         self.present(alert, animated: true)
     }
 

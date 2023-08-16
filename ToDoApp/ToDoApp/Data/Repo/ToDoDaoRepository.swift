@@ -70,11 +70,7 @@ class ToDoDaoRepository {
     func deleteAllTodos() {
         db?.open()
         
-        do {
-            try db!.executeUpdate("DELETE from ToDoList", withArgumentsIn: nil)
-        } catch {
-            print(error.localizedDescription)
-        }
+        db!.executeUpdate("DELETE from ToDoList", withArgumentsIn: nil)
         
         db?.close()
     }
