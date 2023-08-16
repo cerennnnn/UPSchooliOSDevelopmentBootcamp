@@ -10,35 +10,109 @@ import RxSwift
 
 class ToDoDaoRepository {
     var toDoList = BehaviorSubject<[ToDo]>(value: [ToDo]())
+    let db: FMDatabase?
+    
+    init() {
+        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let databaseURL = URL(fileURLWithPath: filePath).appendingPathComponent("ToDoListDB.sqlite")
+        
+        db = FMDatabase(path: databaseURL.path)
+    }
     
     func saveToDo(toDo: String) {
-        print("To do saved! -> \(toDo)")
+        db?.open()
+        
+        do {
+            try db!.executeUpdate("INSERT INTO ToDoList (toDo) VALUES (?)", values: [toDo])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
+        
     }
     
     func updateToDo(toDoID: Int, toDo: String) {
-        print("To do updated! -> \(toDoID) - \(toDo)")
+        db?.open()
+        
+        do {
+            try db!.executeUpdate("UPDATE ToDoList SET toDo = ? WHERE toDoID = ? ", values: [toDo, toDoID])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
     }
     
     func loadAllToDos() {
         
+        db?.open()
         var toDos = [ToDo]()
         
-        let toDo1 = ToDo(toDoID: 1, toDo: "Buy food 🥦🌽🍍")
-        let toDo2 = ToDo(toDoID: 2, toDo: "Study Swift 👩🏻‍💻")
-        let toDo3 = ToDo(toDoID: 3, toDo: "Take mock tests! 📝")
+        do {
+            let result = try db!.executeQuery("SELECT * FROM ToDoList", values: nil)
+            
+            while result.next() {
+                let toDoID = Int(result.string(forColumn: "toDoID"))!
+                let toDoItem = result.string(forColumn: "toDo")!
+                
+                let toDo = ToDo(toDoID: toDoID, toDo: toDoItem)
+                toDos.append(toDo)
+            }
+            toDoList.onNext(toDos)
+        } catch {
+            print(error.localizedDescription)
+        }
         
-        toDos.append(toDo1)
-        toDos.append(toDo2)
-        toDos.append(toDo3)
+        db?.close()
+    }
+    
+    func deleteAllTodos() {
+        db?.open()
         
-        toDoList.onNext(toDos)
+        do {
+            try db!.executeUpdate("DELETE from ToDoList", withArgumentsIn: nil)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
     }
     
     func deleteToDo(toDoID: Int) {
-        print("To do deleted: \(toDoID)")
+        db?.open()
+        
+        do {
+            try db!.executeUpdate("DELETE from ToDoList WHERE toDoID = ?", values: [toDoID])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
     }
     
     func search(toDo: String) {
-        print("Search to do: \(toDo)")
+        db?.open()
+        
+        var toDos = [ToDo]()
+        
+        do {
+            let result = try db!.executeQuery("SELECT * FROM ToDoList WHERE toDo like '%\(toDo)%'", values: nil)
+            
+            while result.next() {
+                
+                let toDoID = Int(result.string(forColumn: "toDoID"))!
+                let toDoItem = result.string(forColumn: "toDo")!
+                
+                let toDo = ToDo(toDoID: toDoID, toDo: toDoItem)
+                toDos.append(toDo)
+            }
+            
+            toDoList.onNext(toDos)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
     }
 }

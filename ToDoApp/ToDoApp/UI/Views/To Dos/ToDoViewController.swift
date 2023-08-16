@@ -9,20 +9,19 @@ import UIKit
 
 class ToDoViewController: UIViewController {
     
-    @IBOutlet weak var toDoSeaarchBar: UISearchBar!
+    @IBOutlet weak var toDoSearchBar: UISearchBar!
     @IBOutlet weak var toDoTableView: UITableView!
     
     static let identifier = "ToDoViewControllerCell"
-    var toDoList = [ToDo]()
-    var filteredToDoList = [ToDo]()
-    var label = UILabel()
-    var isFiltering = false
     let viewModel = ToDoViewModel()
+    var toDoList = [ToDo]()
+    var label = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toDoSeaarchBar.delegate = self
+        toDoSearchBar.delegate = self
         toDoTableView.delegate = self
         toDoTableView.dataSource = self
         
@@ -71,6 +70,7 @@ extension ToDoViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
             // delete all todos
             self.toDoList.removeAll()
+            self.viewModel.deleteAllToDos()
             self.toDoTableView.reloadData()
             self.label.isHidden = false
         }))

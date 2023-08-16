@@ -16,8 +16,8 @@ class ToDo {
         self.toDo = toDo
     }
     
-    enum CodingKeys: String, CodingKey {
-        case personID = "to_do_id"
-        case toDo = "to_do"
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case personID = "to_do_id"
+//        case toDo = "to_do"
+//    }
 }

@@ -66,7 +66,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="toDoSeaarchBar" destination="h7G-4C-vQP" id="Ogy-CB-KYM"/>
+                        <outlet property="toDoSearchBar" destination="h7G-4C-vQP" id="Ogy-CB-KYM"/>
                         <outlet property="toDoTableView" destination="IwJ-AJ-fL7" id="03j-Tt-Pkp"/>
                     </connections>
                 </viewController>
