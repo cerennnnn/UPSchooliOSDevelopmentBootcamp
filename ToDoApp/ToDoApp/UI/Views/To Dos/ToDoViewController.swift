@@ -16,6 +16,7 @@ class ToDoViewController: UIViewController {
     let viewModel = ToDoViewModel()
     var toDoList = [ToDo]()
     var label = UILabel()
+    var activityIndicator: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
@@ -35,11 +36,13 @@ class ToDoViewController: UIViewController {
         
         _ = viewModel.toDoList.subscribe(onNext: { toDos in
             self.toDoList = toDos
+         
             self.toDoTableView.reloadData()
         })
         
         style()
         layout()
+        generateActivityIndicator()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +63,6 @@ extension ToDoViewController {
     }
     
     @objc private func trashButtonTapped() {
-        // clear all to-dos!
         showAlert()
     }
     
@@ -68,15 +70,27 @@ extension ToDoViewController {
         let alert = UIAlertController(title: "‼️", message: "Do you wanna delete all of your to dos?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .cancel))
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            // delete all todos
             self.toDoList.removeAll()
             self.viewModel.deleteAllToDos()
-            self.toDoTableView.reloadData()
-            self.label.isHidden = false
+            self.activityIndicator.startAnimating()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.activityIndicator.stopAnimating()
+                self.toDoTableView.reloadData()
+                self.label.isHidden = false
+            }
+            
+            
         }))
         self.present(alert, animated: true)
     }
  
+    private func generateActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.center = view.center
+        activityIndicator.color = .gray
+        view.addSubview(activityIndicator)
+    }
 }
 
 
