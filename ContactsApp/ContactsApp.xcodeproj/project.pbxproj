@@ -55,7 +55,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		330063272A6D651F00490AAF /* Files */ = {
+		330063272A6D651F00490AAF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				33E606952A69C74600526EB2 /* AppDelegate.swift */,
@@ -64,7 +64,7 @@
 				33E606A02A69C74900526EB2 /* LaunchScreen.storyboard */,
 				33E606A32A69C74900526EB2 /* Info.plist */,
 			);
-			path = Files;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		33C904572A6A994200822387 /* _components */ = {
@@ -107,7 +107,7 @@
 				33E606B32A69D45100526EB2 /* Model */,
 				33E606A92A69C79100526EB2 /* Main Page */,
 				33E606AE2A69C8FA00526EB2 /* Details Page */,
-				330063272A6D651F00490AAF /* Files */,
+				330063272A6D651F00490AAF /* Resources */,
 			);
 			path = ContactsApp;
 			sourceTree = "<group>";

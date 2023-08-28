@@ -22,15 +22,8 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        //MARK: - Register Cell
-        
-        let nibName = UINib(nibName: Constants.detailViewControllerReuseIdentifier, bundle: nil)
-        collectionView.register(nibName, forCellWithReuseIdentifier: Constants.detailViewControllerReuseIdentifier)
-        
-        navigationItem.title = ""
+        prepareNavigationBar()
+        prepareCollectionView()
         
         if let image, let contactName, let contactRelation {
             imageView.image = UIImage(named: image)
@@ -39,6 +32,21 @@ class DetailsViewController: UIViewController {
         }
         
         collectionViewDesign()
+    }
+    
+    private func prepareNavigationBar() {
+        navigationItem.title = ""
+    }
+    
+    private func prepareCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        //MARK: - Register Cell
+        
+        let nibName = UINib(nibName: Constants.detailViewControllerReuseIdentifier, bundle: nil)
+        collectionView.register(nibName, forCellWithReuseIdentifier: Constants.detailViewControllerReuseIdentifier)
+        
     }
     
     private func collectionViewDesign() {

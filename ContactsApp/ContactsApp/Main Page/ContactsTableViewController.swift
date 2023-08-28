@@ -21,13 +21,16 @@ class ContactsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        prepareNavigationBar()
+    }
+    
+    private func prepareNavigationBar() {
         title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle"), style: .plain, target: self, action: #selector(filterButtonTapped))
         
         navigationItem.rightBarButtonItem = filterButton
-        
     }
     
     @objc func filterButtonTapped() {

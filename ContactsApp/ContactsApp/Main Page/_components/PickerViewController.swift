@@ -23,11 +23,14 @@ class PickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        
+        preparePickerView()
         contactTypeLabel.text = "All Contacts"
         generateActivityIndicator()
+    }
+    
+    private func preparePickerView() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
